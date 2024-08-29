@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Pixel.ttf') format('truetype');
+}
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0%;
+    background-color: #0D262D;
+    color: #fff;
+    height: 90%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+div {
+    height: 90%;
+    width: 100%;
+}
+
+div img {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    left: 10px;
+    top: 80px;
+}
+
+.cabecalhoJogo {
+    height: 10%;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.conteudo {
+    background-color: rgb(72, 182, 209);
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100%;
+}
+
+.obstaculoPai {
+    background-color: rgb(72, 182, 209);
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100%;
+    width: 60px;
+}
+
+.obstaculo {
+    width: 50px;
+    background-color: forestgreen;
+    border: solid 3px black;
+    margin: 0%;
+}
+
+.counting {
+    margin-left: 75%;
+}
