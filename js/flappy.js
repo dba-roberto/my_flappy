@@ -116,12 +116,12 @@ function colisaoFlappy(pAtuTop, pAtuLeft) {
             return true;
         }
         else {
-
+            /*
             console.log(pAtuTop + ' --> ' + coordenada5.height + ' --> ' + pAtuLeft + ' --> ' + coordenada5.left + ' --> ' + pAtuLeft + ' --> ' + coordenada5.right);
             console.log(pAtuTop + ' --> ' + coordenada6.height + ' --> ' + pAtuLeft + ' --> ' + coordenada6.left + ' --> ' + pAtuLeft + ' --> ' + coordenada6.right);
             console.log(pAtuTop + ' --> ' + coordenada7.height + ' --> ' + pAtuLeft + ' --> ' + coordenada7.left + ' --> ' + pAtuLeft + ' --> ' + coordenada7.right);
             console.log(pAtuTop + ' --> ' + coordenada8.height + ' --> ' + pAtuLeft + ' --> ' + coordenada8.left + ' --> ' + pAtuLeft + ' --> ' + coordenada8.right);
-
+            */
             return false;
 
         };
@@ -148,9 +148,12 @@ function jogarFlappy() {
             flappy.style.top = pdown + "px";
             pdown = pdown + pfixed;
 
-            const counting = document.getElementById('counting');
+            const score = document.getElementById('score');
             count = count + 1;
-            counting.innerText = "Score " + count;
+            score.innerText = "Score " + count;
+
+            const ilevel = document.getElementById('level');
+            ilevel.innerText = "Level " + level;
 
             if (colisaoFlappy(pAtuTop, pAtuLeft) == true) {
 
@@ -161,6 +164,7 @@ function jogarFlappy() {
 
                 sFlappy = false;
                 count = 0;
+                level = 0;
                 pfixed = 12;
 
                 removerObstaculos();
@@ -191,6 +195,7 @@ var pdown = 80;
 var sFlappy = false;
 var flappy = document.querySelector('img');
 var count = 0;
+var level = 0;
 
 const comando = document.querySelector('body');
 
@@ -200,7 +205,15 @@ comando.addEventListener('keydown', (e) => {
     if (!sFlappy) {
 
         sFlappy = true;
-        pfixed = pfixed + Math.floor(count/100);
+
+        if (Math.floor(count / 100) > level) {
+
+            level = level + 1;
+            pfixed = pfixed + level;
+
+            console.log(pfixed);
+
+        };
 
         criaObstaculos();
 
