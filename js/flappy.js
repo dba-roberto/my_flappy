@@ -161,9 +161,9 @@ function jogarFlappy() {
 
                 sFlappy = false;
                 count = 0;
+                pfixed = 12;
 
                 removerObstaculos();
-
 
             }
 
@@ -200,6 +200,7 @@ comando.addEventListener('keydown', (e) => {
     if (!sFlappy) {
 
         sFlappy = true;
+        pfixed = pfixed + Math.floor(count/100);
 
         criaObstaculos();
 
